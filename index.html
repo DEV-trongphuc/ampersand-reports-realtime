@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Ampersand Ads Reports - Phúc Marketing</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -11,6 +11,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="icon" href="./DOM-img/favicon.png" type="image/png" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./dom.css" />
+    <link rel="stylesheet" href="/dom.css" />
   </head>
   <body>
     <div id="dom_sidebar">
@@ -73,15 +74,15 @@
             <ul>
               <li data-date="today">Today</li>
               <li data-date="yesterday">Yesterday</li>
-              <li data-date="last_3d">Last 3 days</li>
-              <li data-date="last_7d">Last 7 days</li>
-              <li data-date="last_30d">Last 30 days</li>
-              <li data-date="this_week_mon_today">This Week</li>
-              <li data-date="last_week_mon_sun">Last Week</li>
-              <li data-date="this_month">This Month</li>
-              <li data-date="last_month">Last Month</li>
-              <li data-date="this_quarter">This Quarter</li>
-              <li data-date="last_quarter">Last Quarter</li>
+              <li data-date="last%5f3d">Last 3 days</li>
+              <li data-date="last%5f7d">Last 7 days</li>
+              <li data-date="last%5f30d">Last 30 days</li>
+              <li data-date="this%5fweek%5fmon%5ftoday">This Week</li>
+              <li data-date="last%5fweek%5fmon%5fsun">Last Week</li>
+              <li data-date="this%5fmonth">This Month</li>
+              <li data-date="last%5fmonth">Last Month</li>
+              <li data-date="this%5fquarter">This Quarter</li>
+              <li data-date="last%5fquarter">Last Quarter</li>
               <li data-date="maximum">Data Maximum</li>
               <!-- <li class="li_custom_date">
                 Custom date
@@ -204,7 +205,26 @@
           </div>
         </div>
       </div>
-
+      <div class="dom_chart_total viewPerformance">
+        <div class="dom_chart_item circle">
+          <h2>Reach on Flatform</h2>
+          <canvas id="reachChart"></canvas>
+        </div>
+        <div class="dom_chart_item list">
+          <h2>Reach by age</h2>
+          <canvas id="ageChart"></canvas>
+        </div>
+      </div>
+      <div class="dom_chart_total viewPerformance">
+        <div class="dom_chart_item circle">
+          <h2>Reach on Gender</h2>
+          <canvas id="genderChart"></canvas>
+        </div>
+        <div class="dom_chart_item list">
+          <h2>Reach by Region</h2>
+          <canvas id="regionChart"></canvas>
+        </div>
+      </div>
       <div class="dom_table_data">
         <div class="dom_detail_head">
           <h2>Detail Adset Data</h2>
