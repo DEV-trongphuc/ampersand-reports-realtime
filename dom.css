@@ -581,10 +581,10 @@ input[type="checkbox"]:checked::before {
   background-color: #f2f2f270; /* Màu nền cho các hàng chẵn */
 }
 .dom_chart_total.viewPerformance > .dom_chart_item:nth-child(1) {
-  width: calc(25% - 1.5rem);
+  width: calc(35% - 1.5rem);
 }
 .dom_chart_total.viewPerformance > .dom_chart_item:nth-child(2) {
-  width: 75%;
+  width: 65%;
 }
 /* Màu nền cho các hàng lẻ */
 .dom_detail_table tbody tr:nth-child(odd) {
