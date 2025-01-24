@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/dom.css" />
+  </head>
+  <body>
+    <div id="dom_sidebar">
+      <div class="dom_logo">
+        <img src="./DOM-img/DOM_LOGO.png" />
+      </div>
+      <div class="dom_adsid">
+        <div>
+          <img src="./DOM-img/ampersand.jpg" />
+          <div>
+            <p>Ampersand</p>
+            <p>18555554858</p>
+          </div>
+        </div>
+        <i class="fa-solid fa-chevron-down"></i>
+      </div>
+      <p>MAIN MENU</p>
+      <ul class="dom_main_menu">
+        <li>
+          <a class="active">
+            <i class="fa-solid fa-chart-column"></i> <span>Dashboard</span></a
+          >
+        </li>
+        <li>
+          <a class="">
+            <i class="fa-solid fa-chart-pie"></i> <span>Performance</span></a
+          >
+        </li>
+        <!-- <li>
+          <a class="">
+            <i class="fa-solid fa-user-group"></i>
+            <span>Demographic</span></a
+          >
+        </li>
+        <li>
+          <a class="">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Flatform</span></a
+          >
+        </li> -->
+      </ul>
+      <p>QUICK FILTER</p>
+      <ul class="dom_quick_filter"></ul>
+    </div>
+    <div id="dom_contentarea">
+      <div class="dom_header">
+        <div class="dom_header_date">
+          <i class="fa-solid fa-calendar-days"></i>
+          <div class="dom_choose_day">
+            <span class="dom_choosed">Today</span>
+            <i class="fa-solid fa-angle-down"></i>
+            <ul>
+              <li data-date="today">Today</li>
+              <li data-date="yesterday">Yesterday</li>
+              <li data-date="last_3d">Last 3 days</li>
+              <li data-date="last_7d">Last 7 days</li>
+              <li data-date="last_30d">Last 30 days</li>
+              <li data-date="this_week_mon_today">This Week</li>
+              <li data-date="last_week_mon_sun">Last Week</li>
+              <li data-date="this_month">This Month</li>
+              <li data-date="last_month">Last Month</li>
+              <li data-date="this_quarter">This Quarter</li>
+              <li data-date="last_quarter">Last Quarter</li>
+              <li data-date="maximum">Data Maximum</li>
+              <!-- <li class="li_custom_date">
+                Custom date
+                <div class="custom_date">
+                  <p><span>Start</span> <input type="date" id="start" /></p>
+                  <p><span>End</span> <input type="date" id="end" /></p>
+                  <a class="apply_custom_date">Apply</a>
+                </div>
+              </li> -->
+            </ul>
+          </div>
+          <p class="dom_choosed_day"></p>
+        </div>
+        <div class="dom_user">
+          <p>Ampersand</p>
+          <img src="./DOM-img/ampersand.jpg" />
+        </div>
+      </div>
+      <div class="dom_choose_campaign"></div>
+
+      <div class="dom_total">
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Toal Account Spend</p>
+              <p class="dom_total_number" id="total_spend"></p>
+            </div>
+            <i class="fa-solid fa-sack-dollar"></i>
+          </div>
+        </div>
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Toal Reach</p>
+              <p class="dom_total_number" id="total_reach"></p>
+            </div>
+            <i class="fa-solid fa-street-view"></i>
+          </div>
+        </div>
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Toal Reaction</p>
+              <p class="dom_total_number" id="total_reaction"></p>
+            </div>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </div>
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Toal LikePage</p>
+              <p class="dom_total_number" id="total_follows"></p>
+            </div>
+            <i class="fa-solid fa-thumbs-up"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="dom_total viewPerformance">
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Toal Account Spend</p>
+              <p class="dom_total_number" id="total_spend_viewPerformance"></p>
+            </div>
+            <i class="fa-solid fa-sack-dollar"></i>
+          </div>
+        </div>
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Toal Reach</p>
+              <p class="dom_total_number" id="total_reach_viewPerformance"></p>
+            </div>
+            <i class="fa-solid fa-street-view"></i>
+          </div>
+        </div>
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Toal Messenger</p>
+              <p
+                class="dom_total_number"
+                id="total_messenger_viewPerformance"
+              ></p>
+            </div>
+            <i class="fa-brands fa-facebook-messenger"></i>
+          </div>
+        </div>
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Toal LikePage</p>
+              <p
+                class="dom_total_number"
+                id="total_follows_viewPerformance"
+              ></p>
+            </div>
+            <i class="fa-solid fa-thumbs-up"></i>
+          </div>
+        </div>
+      </div>
+      <div class="dom_chart_total">
+        <div class="dom_chart_item">
+          <h2>Cost allocation bar chart</h2>
+          <canvas id="brandChart"></canvas>
+        </div>
+        <!-- <div class="dom_chart_item circle">
+          <h2>Spend on Flatform</h2>
+          <canvas id="platformChart"></canvas>
+        </div> -->
+        <div class="dom_chart_item list">
+          <h2>Highest campaign spend</h2>
+          <div>
+            <p class="dom_chart_most_title">
+              <span>Name</span> <span>Spend</span>
+            </p>
+            <ul class="dom_chart_most_ul"></ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="dom_table_data">
+        <div class="dom_detail_head">
+          <h2>Detail Adset Data</h2>
+          <div>
+            <input
+              id="dom_detail_input"
+              placeholder='Filter by "Campaign name"'
+              type="text"
+            />
+            <p id="dom_detail_find">FIND</p>
+          </div>
+        </div>
+        <div class="dom_table_container">
+          <div>
+            <table class="dom_detail_table">
+              <thead>
+                <tr>
+                  <th>Select</th>
+                  <th>Campaign Name</th>
+                  <th>Adset Name</th>
+                  <th>Status</th>
+                  <th>Cost Spend</th>
+                  <th>Reach</th>
+                  <th>Impression</th>
+                  <th>Result</th>
+                  <th>CPR</th>
+                  <th>CPM</th>
+                  <th>Reaction</th>
+                  <th>Comments</th>
+                  <th>Follows</th>
+                  <th>Messenger Start</th>
+                  <th>Link Click</th>
+                </tr>
+              </thead>
+              <tbody class="dom_detail_tbody"></tbody>
+              <tfoot>
+                <tr>
+                  <td class="dom_selected_total" colspan="4"></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./dom.js"></script>
+  </body>
+</html>
