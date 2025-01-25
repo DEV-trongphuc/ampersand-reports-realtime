@@ -363,6 +363,20 @@ body {
   flex-direction: column;
   overflow: hidden;
 }
+.dom_total_item > div:last-child {
+  display: flex;
+  justify-content: space-between;
+}
+.dom_total_item > div:last-child > p:first-child {
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+.dom_total_item > div:last-child > p:last-child {
+  display: flex;
+  gap: 1rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
 .dom_total_percent {
   display: flex;
   gap: 1rem;
@@ -683,7 +697,9 @@ input[type="checkbox"]:checked::before {
 .dom_selected_total {
   text-align: center !important;
 }
-
+#dailyChart {
+  padding: 0 1rem;
+}
 .loading {
   position: fixed;
   z-index: 9999;
