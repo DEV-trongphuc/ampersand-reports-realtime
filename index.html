@@ -107,7 +107,7 @@
         <div class="dom_total_item">
           <div>
             <div>
-              <p class="dom_total_title">Toal Account Spend</p>
+              <p class="dom_total_title">Total Account Spend</p>
               <p class="dom_total_number" id="total_spend"></p>
             </div>
             <i class="fa-solid fa-sack-dollar"></i>
@@ -116,7 +116,7 @@
         <div class="dom_total_item">
           <div>
             <div>
-              <p class="dom_total_title">Toal Reach</p>
+              <p class="dom_total_title">Total Reach</p>
               <p class="dom_total_number" id="total_reach"></p>
             </div>
             <i class="fa-solid fa-street-view"></i>
@@ -125,7 +125,7 @@
         <div class="dom_total_item">
           <div>
             <div>
-              <p class="dom_total_title">Toal Reaction</p>
+              <p class="dom_total_title">Total Reaction</p>
               <p class="dom_total_number" id="total_reaction"></p>
             </div>
             <i class="fa-solid fa-heart"></i>
@@ -134,7 +134,7 @@
         <div class="dom_total_item">
           <div>
             <div>
-              <p class="dom_total_title">Toal LikePage</p>
+              <p class="dom_total_title">Total LikePage</p>
               <p class="dom_total_number" id="total_follows"></p>
             </div>
             <i class="fa-solid fa-thumbs-up"></i>
@@ -146,7 +146,86 @@
         <div class="dom_total_item">
           <div>
             <div>
-              <p class="dom_total_title">Toal Account Spend</p>
+              <p class="dom_total_title">Total Reach</p>
+              <p class="dom_total_number" id="total_reach_viewPerformance"></p>
+            </div>
+            <i class="fa-solid fa-street-view"></i>
+          </div>
+          <div class="dom_cpr_reach">
+            <p id="dom_reach_unit"></p>
+            <p
+              onclick="alert('Only calculated on Brand Awareness campaigns. - may be displayed if there are no campaigns during the selected period')"
+            >
+              Unit cost <i class="fa-solid fa-circle-info"></i>
+            </p>
+          </div>
+        </div>
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Total Reaction</p>
+              <p
+                class="dom_total_number"
+                id="total_reaction_viewPerformance"
+              ></p>
+            </div>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <div class="dom_cpr_reach">
+            <p id="dom_reaction_unit"></p>
+            <p
+              onclick="alert('Only calculated on Engagement objectives Reaction campaigns. - may be displayed if there are no campaigns during the selected period')"
+            >
+              Unit cost <i class="fa-solid fa-circle-info"></i>
+            </p>
+          </div>
+        </div>
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Total Messenger</p>
+              <p
+                class="dom_total_number"
+                id="total_messenger_viewPerformance"
+              ></p>
+            </div>
+            <i class="fa-brands fa-facebook-messenger"></i>
+          </div>
+          <div class="dom_cpr_reach">
+            <p id="dom_mess_unit"></p>
+            <p
+              onclick="alert('Only calculated on Messenger campaigns. - may be displayed if there are no campaigns during the selected period')"
+            >
+              Unit cost <i class="fa-solid fa-circle-info"></i>
+            </p>
+          </div>
+        </div>
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Total LikePage</p>
+              <p
+                class="dom_total_number"
+                id="total_follows_viewPerformance"
+              ></p>
+            </div>
+            <i class="fa-solid fa-thumbs-up"></i>
+          </div>
+          <div class="dom_cpr_reach">
+            <p id="dom_like_unit"></p>
+            <p
+              onclick="alert('Only calculated on Like/Follows campaigns. - may be displayed if there are no campaigns during the selected period')"
+            >
+              Unit cost <i class="fa-solid fa-circle-info"></i>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="dom_total viewPerformance">
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Total Account Spend</p>
               <p class="dom_total_number" id="total_spend_viewPerformance"></p>
             </div>
             <i class="fa-solid fa-sack-dollar"></i>
@@ -155,40 +234,40 @@
         <div class="dom_total_item">
           <div>
             <div>
-              <p class="dom_total_title">Toal Reach</p>
-              <p class="dom_total_number" id="total_reach_viewPerformance"></p>
+              <p class="dom_total_title">Total Engagement</p>
+              <p
+                class="dom_total_number"
+                id="total_engagement_viewPerformance"
+              ></p>
             </div>
-            <i class="fa-solid fa-street-view"></i>
+            <i class="fa-solid fa-photo-film"></i>
           </div>
         </div>
         <div class="dom_total_item">
           <div>
             <div>
-              <p class="dom_total_title">Toal Messenger</p>
+              <p class="dom_total_title">Total Comments</p>
               <p
                 class="dom_total_number"
-                id="total_messenger_viewPerformance"
+                id="total_comment_viewPerformance"
               ></p>
             </div>
-            <i class="fa-brands fa-facebook-messenger"></i>
+            <i class="fa-solid fa-comment-dots"></i>
           </div>
         </div>
         <div class="dom_total_item">
           <div>
             <div>
-              <p class="dom_total_title">Toal LikePage</p>
-              <p
-                class="dom_total_number"
-                id="total_follows_viewPerformance"
-              ></p>
+              <p class="dom_total_title">Total Link click</p>
+              <p class="dom_total_number" id="total_link_viewPerformance"></p>
             </div>
-            <i class="fa-solid fa-thumbs-up"></i>
+            <i class="fa-solid fa-link"></i>
           </div>
         </div>
       </div>
       <div class="dom_chart_total viewPerformance dailyChart">
         <div class="dom_chart_item circle">
-          <h2>Daily cost spend</h2>
+          <h2 class="daily_title">Daily cost spend</h2>
           <canvas id="dailyChart"></canvas>
         </div>
       </div>
@@ -259,6 +338,7 @@
                   <th>Result</th>
                   <th>CPR</th>
                   <th>CPM</th>
+                  <th>Engagement</th>
                   <th>Reaction</th>
                   <th>Comments</th>
                   <th>Follows</th>
