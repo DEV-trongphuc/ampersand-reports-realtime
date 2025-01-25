@@ -45,7 +45,7 @@
         </li>
         <li>
           <a class="">
-            <i class="fa-solid fa-chart-pie"></i> <span>Performance</span></a
+            <i class="fa-solid fa-chart-pie"></i> <span>Insights</span></a
           >
         </li>
         <!-- <li>
@@ -69,7 +69,7 @@
         <div class="dom_header_date">
           <i class="fa-solid fa-calendar-days"></i>
           <div class="dom_choose_day">
-            <span class="dom_choosed">Today</span>
+            <span class="dom_choosed">Last 7 days</span>
             <i class="fa-solid fa-angle-down"></i>
             <ul>
               <li data-date="today">Today</li>
@@ -186,6 +186,12 @@
           </div>
         </div>
       </div>
+      <div class="dom_chart_total viewPerformance dailyChart">
+        <div class="dom_chart_item circle">
+          <h2>Daily cost spend</h2>
+          <canvas id="dailyChart"></canvas>
+        </div>
+      </div>
       <div class="dom_chart_total">
         <div class="dom_chart_item">
           <h2>Cost allocation bar chart</h2>
@@ -225,6 +231,7 @@
           <canvas id="regionChart"></canvas>
         </div>
       </div>
+
       <div class="dom_table_data">
         <div class="dom_detail_head">
           <h2>Detail Adset Data</h2>
