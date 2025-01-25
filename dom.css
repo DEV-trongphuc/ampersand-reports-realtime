@@ -451,7 +451,7 @@ body {
 }
 .dom_table_data {
   width: 100%;
-  height: 70rem;
+  height: 80rem;
   background-color: white;
   margin-top: 2rem;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
@@ -508,7 +508,7 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 .dom_table_container > div {
-  max-height: 50rem;
+  max-height: 60rem;
   overflow-y: auto;
 }
 .dom_detail_table tbody {
@@ -585,6 +585,9 @@ input[type="checkbox"]:checked::before {
 }
 .dom_chart_total.viewPerformance > .dom_chart_item:nth-child(2) {
   width: 65%;
+}
+.dom_chart_total.viewPerformance.dailyChart > .dom_chart_item:nth-child(1) {
+  width: 100%;
 }
 /* Màu nền cho các hàng lẻ */
 .dom_detail_table tbody tr:nth-child(odd) {
