@@ -47,7 +47,7 @@
         </li>
         <li>
           <a class="">
-            <i class="fa-solid fa-chart-pie"></i> <span>Insights</span></a
+            <i class="fa-solid fa-chart-pie"></i> <span>Demographic</span></a
           >
         </li>
         <!-- <li>
@@ -158,7 +158,7 @@
             <p
               onclick="alert('Only calculated on Brand Awareness campaigns. - may be displayed if there are no campaigns OF TYPE during the selected period')"
             >
-              Unit cost <i class="fa-solid fa-circle-info"></i>
+              <span>Unit cost</span> <i class="fa-solid fa-circle-info"></i>
             </p>
           </div>
         </div>
@@ -178,7 +178,7 @@
             <p
               onclick="alert('Only calculated on Engagement objectives Reaction campaigns. - may be displayed if there are no campaigns OF TYPE during the selected period')"
             >
-              Unit cost <i class="fa-solid fa-circle-info"></i>
+              <span>Unit cost</span> <i class="fa-solid fa-circle-info"></i>
             </p>
           </div>
         </div>
@@ -198,7 +198,7 @@
             <p
               onclick="alert('Only calculated on Messenger campaigns. - may be displayed if there are no campaigns OF TYPE during the selected period')"
             >
-              Unit cost <i class="fa-solid fa-circle-info"></i>
+              <span>Unit cost</span> <i class="fa-solid fa-circle-info"></i>
             </p>
           </div>
         </div>
@@ -218,7 +218,7 @@
             <p
               onclick="alert('Only calculated on Like/Follows campaigns. - may be displayed if there are no campaigns OF TYPE during the selected period')"
             >
-              Unit cost <i class="fa-solid fa-circle-info"></i>
+              <span>Unit cost</span> <i class="fa-solid fa-circle-info"></i>
             </p>
           </div>
         </div>
@@ -271,12 +271,27 @@
         <div class="dom_chart_item circle" id="dom_daily_chart">
           <div class="daily_title_wrap">
             <h2 class="daily_title"></h2>
+
             <i
               class="fa-regular fa-floppy-disk download_btn"
               data-name="Daily line chart"
               data-id="dom_daily_chart"
             ></i>
           </div>
+          <div class="dom_select_view">
+            <p>
+              <span class="view_selected">View Spend</span>
+              <i class="fa-solid fa-angle-down"></i>
+            </p>
+            <ul>
+              <li data-view="Reach">Reach</li>
+              <li data-view="Messaging Conversations">Messaging</li>
+              <li data-view="Post Reactions">Post Reactions</li>
+              <li data-view="Page Likes">Page Likes</li>
+              <li data-view="Spend">Spend</li>
+            </ul>
+          </div>
+
           <canvas id="dailyChart"></canvas>
         </div>
       </div>
@@ -298,46 +313,12 @@
         </div> -->
         <div class="dom_chart_item list">
           <h2>Highest campaign spend</h2>
-          <div>
+          <div class="dom_chart_item_highest">
             <p class="dom_chart_most_title">
               <span>Name</span> <span>Spend</span>
             </p>
             <ul class="dom_chart_most_ul"></ul>
           </div>
-        </div>
-      </div>
-      <div class="dom_chart_total viewPerformance">
-        <div class="dom_chart_item circle">
-          <h2>Reach on Flatform</h2>
-          <canvas id="reachChart"></canvas>
-        </div>
-        <div class="dom_chart_item list" id="dom_age_chart">
-          <div class="daily_title_wrap">
-            <h2 class="daily_title">Reach by age</h2>
-            <i
-              class="fa-regular fa-floppy-disk download_btn"
-              data-name="Reach by age chart"
-              data-id="dom_age_chart"
-            ></i>
-          </div>
-          <canvas id="ageGenderChart"></canvas>
-        </div>
-      </div>
-      <div class="dom_chart_total viewPerformance">
-        <div class="dom_chart_item circle">
-          <h2>Reach on Gender</h2>
-          <canvas id="genderChart"></canvas>
-        </div>
-        <div class="dom_chart_item list" id="dom_region_chart">
-          <div class="daily_title_wrap">
-            <h2 class="daily_title">Reach by Region</h2>
-            <i
-              class="fa-regular fa-floppy-disk download_btn"
-              data-name="Reach by Region chart"
-              data-id="dom_region_chart"
-            ></i>
-          </div>
-          <canvas id="regionChart"></canvas>
         </div>
       </div>
 
@@ -395,6 +376,40 @@
               </tfoot>
             </table>
           </div>
+        </div>
+      </div>
+      <div class="dom_chart_total viewPerformance">
+        <div class="dom_chart_item circle">
+          <h2>Reach on Flatform</h2>
+          <canvas id="reachChart"></canvas>
+        </div>
+        <div class="dom_chart_item list" id="dom_age_chart">
+          <div class="daily_title_wrap">
+            <h2 class="daily_title">Reach by age</h2>
+            <i
+              class="fa-regular fa-floppy-disk download_btn"
+              data-name="Reach by age chart"
+              data-id="dom_age_chart"
+            ></i>
+          </div>
+          <canvas id="ageGenderChart"></canvas>
+        </div>
+      </div>
+      <div class="dom_chart_total viewPerformance">
+        <div class="dom_chart_item circle">
+          <h2>Reach on Gender</h2>
+          <canvas id="genderChart"></canvas>
+        </div>
+        <div class="dom_chart_item list" id="dom_region_chart">
+          <div class="daily_title_wrap">
+            <h2 class="daily_title">Reach by Region</h2>
+            <i
+              class="fa-regular fa-floppy-disk download_btn"
+              data-name="Reach by Region chart"
+              data-id="dom_region_chart"
+            ></i>
+          </div>
+          <canvas id="regionChart"></canvas>
         </div>
       </div>
       <div class="loading">
