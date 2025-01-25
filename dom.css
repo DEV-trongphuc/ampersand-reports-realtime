@@ -55,7 +55,7 @@ body {
   width: 28rem;
   height: 100vh;
   overflow-y: auto;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
@@ -67,13 +67,13 @@ body {
 
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.074);
-  border-radius: 10px;
+  border-radius: 7px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: rgba(0, 0, 0, 0.06);
-  border-radius: 10px;
+  border-radius: 7px;
 }
 .dom_logo {
   padding-bottom: 2rem;
@@ -87,8 +87,8 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
+  border-radius: 7px;
   background-color: var(--fadeClr);
   gap: 1rem;
   cursor: pointer;
@@ -149,7 +149,7 @@ body {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  border-radius: 10px;
+  border-radius: 7px;
   transition: 0.3s;
   color: rgba(0, 0, 0, 0.726);
   cursor: pointer;
@@ -157,7 +157,7 @@ body {
 #dom_sidebar ul li a.active,
 #dom_sidebar ul li a:hover {
   background-color: var(--fadeClr);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
   color: var(--fadeText);
 }
 #dom_sidebar ul:nth-of-type(2) li a.active i {
@@ -196,7 +196,7 @@ body {
   background-color: white;
   height: 8rem;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  border-radius: 7px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -209,8 +209,7 @@ body {
   gap: 2rem;
 }
 .dom_header_date .dom_choose_day {
-  overflow: hidden;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   padding: 1rem 2rem;
   border-radius: 5px;
   display: flex;
@@ -231,7 +230,7 @@ body {
   width: 100%;
   background-color: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  border-radius: 7px;
   z-index: -1;
   pointer-events: none;
 }
@@ -274,7 +273,7 @@ body {
   background-color: var(--mainClr);
   color: white;
   padding: 1rem 2rem;
-  border-radius: 10px;
+  border-radius: 7px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -292,7 +291,7 @@ body {
   background-color: white;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   padding: 2rem;
-  border-radius: 10px;
+  border-radius: 7px;
   opacity: 0;
   transition: 0.3s;
 }
@@ -320,7 +319,7 @@ body {
   display: inline-block;
   padding: 5px 1rem;
   width: 5rem;
-  border-radius: 10px;
+  border-radius: 7px;
   background: var(--fadeClr);
   font-size: 1.2rem;
 }
@@ -333,7 +332,7 @@ body {
   background-color: var(--mainClr);
   text-align: center;
   padding: 1rem;
-  border-radius: 10px;
+  border-radius: 7px;
   color: white;
 }
 
@@ -363,8 +362,8 @@ body {
 .dom_total_item {
   width: calc(100% / 4 - 1.5rem);
   background: white;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
+  border-radius: 7px;
   display: flex;
   height: max-content;
   flex-direction: column;
@@ -430,7 +429,7 @@ body {
   cursor: pointer;
   font-weight: bold;
   padding: 1rem 2rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
@@ -444,7 +443,7 @@ body {
   position: absolute;
   width: 100%;
   background-color: white;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   list-style: none;
   display: flex;
@@ -472,7 +471,7 @@ body {
   padding: 1rem;
   font-size: 1.5rem;
   color: #686868;
-  border-radius: 10px;
+  border-radius: 7px;
   transition: 0.3s;
 }
 .dom_total_item > div > i:hover {
@@ -500,8 +499,8 @@ body {
 .dom_chart_item {
   width: calc(50% - 1rem);
   background-color: white;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
+  border-radius: 7px;
   padding: 3rem;
 }
 
@@ -522,15 +521,15 @@ body {
 }
 .dom_chart_item_highest {
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
 }
 .dom_chart_most_title {
   display: flex;
   justify-content: space-between;
   background: var(--fadeClr);
   padding: 1.5rem 2rem;
-  border-radius: 10px 5px 0 0;
+  border-radius: 7px 5px 0 0;
   font-weight: bold;
 }
 .dom_chart_item.list ul {
@@ -560,8 +559,8 @@ body {
   height: auto;
   background-color: white;
   margin-top: 2rem;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
+  border-radius: 7px;
   padding: 0 4rem;
   scroll-margin-top: 9rem;
 }
@@ -587,7 +586,7 @@ body {
   width: 80%;
   border: none;
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.55);
-  border-radius: 10px;
+  border-radius: 7px;
   border: 1px solid #ffa90000;
   transition: 0.3s;
 }
@@ -600,8 +599,8 @@ body {
   cursor: pointer;
   color: white;
   font-weight: bold;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
 }
 .dom_detail_table {
   width: 100%;
@@ -611,8 +610,8 @@ body {
 }
 .dom_table_container {
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.13);
 }
 .dom_table_container > div {
   max-height: 55rem;
@@ -672,7 +671,7 @@ input[type="checkbox"]:checked::before {
 
 .dom_table_container > div::-webkit-scrollbar-thumb {
   background-color: #88888833; /* Màu sắc của thanh cuộn */
-  border-radius: 10px; /* Làm tròn các góc của thanh cuộn */
+  border-radius: 7px; /* Làm tròn các góc của thanh cuộn */
 }
 
 .dom_table_container > div::-webkit-scrollbar-thumb:hover {
@@ -692,14 +691,25 @@ input[type="checkbox"]:checked::before {
 .dom_detail_table tbody tr:nth-child(even) {
   background-color: #f2f2f270; /* Màu nền cho các hàng chẵn */
 }
-.dom_chart_total.viewPerformance > .dom_chart_item:nth-child(1) {
-  width: calc(35% - 1.5rem);
+.dom_chart_total.viewPerformance > .dom_chart_item {
+  width: calc(33% - 1.5rem);
 }
-.dom_chart_total.viewPerformance > .dom_chart_item:nth-child(2) {
-  width: 65%;
+#budgetChart {
+  height: 5rem; /* Chiều cao là 5rem */
+  width: 100%; /* Chiều rộng đầy đủ */
 }
+
 .dom_chart_total.viewPerformance.dailyChart > .dom_chart_item:nth-child(1) {
   width: 100%;
+}
+.dom_chart_total.viewPerformance.w50 > .dom_chart_item:nth-child(1) {
+  width: 50%;
+}
+.dom_chart_total.viewPerformance.w50 > .dom_chart_item:nth-child(2) {
+  width: 50%;
+}
+.dom_chart_total.viewPerformance.budgetChart > .dom_chart_item:nth-child(1) {
+  width: 50%;
 }
 /* Màu nền cho các hàng lẻ */
 .dom_detail_table tbody tr:nth-child(odd) {
@@ -740,7 +750,7 @@ input[type="checkbox"]:checked::before {
   width: 10px;
   height: 10px;
   background-color: var(--mainClr);
-  border-radius: 10px;
+  border-radius: 7px;
 }
 .dom_status_inactive::after {
   content: "";
@@ -751,7 +761,7 @@ input[type="checkbox"]:checked::before {
   width: 10px;
   height: 10px;
   background-color: var(--buttonFadeClr);
-  border-radius: 10px;
+  border-radius: 7px;
 }
 .dom_detail_table thead {
   border-top: 1px solid #f2f2f270; /* Đường viền trên của các th */
@@ -857,4 +867,47 @@ input[type="checkbox"]:checked::before {
     background-size: 10px 3px, 10px 3px, 10px 3px, 10px 10px, 10px 30px,
       10px 50px;
   }
+}
+
+.progress-bar {
+  display: flex;
+  width: 100%;
+  height: 15px; /* Chiều cao của thanh */
+  background-color: #e0e0e0; /* Màu nền của thanh */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.segment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 100%;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.segment_legend {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+.segment_legend b {
+  font-weight: bold;
+}
+.segment p {
+  margin: 0;
+  font-weight: bold;
+}
+
+.segment.reach {
+  background-color: #ffae00;
+}
+.segment.engagement {
+  background-color: rgb(186, 127, 0);
+}
+.segment.likepage {
+  background-color: rgb(144, 98, 0);
+}
+.segment.mess {
+  background-color: rgb(92, 63, 0);
 }
