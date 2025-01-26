@@ -27,6 +27,7 @@
     <div id="dom_sidebar">
       <div class="dom_logo">
         <img src="./DOM-img/DOM_LOGO.png" />
+        <i class="fa-regular fa-square-caret-right dom_bar_close"></i>
       </div>
       <div class="dom_adsid">
         <div>
@@ -68,6 +69,9 @@
     </div>
     <div id="dom_contentarea">
       <div class="dom_header">
+        <div class="dom_bar">
+          <i class="fa-solid fa-bars"></i>
+        </div>
         <div class="dom_header_date">
           <i class="fa-solid fa-calendar-days"></i>
           <div class="dom_choose_day">
@@ -86,14 +90,14 @@
               <li data-date="this%5fquarter">This Quarter</li>
               <li data-date="last%5fquarter">Last Quarter</li>
               <li data-date="maximum">Data Maximum</li>
-              <!-- <li class="li_custom_date">
+              <li class="li_custom_date">
                 Custom date
                 <div class="custom_date">
                   <p><span>Start</span> <input type="date" id="start" /></p>
                   <p><span>End</span> <input type="date" id="end" /></p>
                   <a class="apply_custom_date">Apply</a>
                 </div>
-              </li> -->
+              </li>
             </ul>
           </div>
           <p class="dom_choosed_day"></p>
@@ -267,7 +271,7 @@
           </div>
         </div>
       </div>
-      <div class="dom_chart_total viewPerformance dailyChart">
+      <div class="dom_chart_total viewPerformance dailyChart percentChart">
         <div class="dom_chart_item only">
           <h2>% Spend for Campaign types</h2>
           <div class="progress-bar">
@@ -420,7 +424,7 @@
           <canvas id="regionChart"></canvas>
         </div>
       </div>
-      <div class="dom_chart_total viewPerformance">
+      <div class="dom_chart_total viewPerformance circle">
         <div class="dom_chart_item circle">
           <h2>Reach on Flatform</h2>
           <canvas id="reachChart"></canvas>
