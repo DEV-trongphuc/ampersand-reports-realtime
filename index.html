@@ -48,6 +48,11 @@
         </li>
         <li>
           <a class="">
+            <i class="fa-solid fa-chart-simple"></i><span>Performance</span></a
+          >
+        </li>
+        <li>
+          <a class="">
             <i class="fa-solid fa-chart-pie"></i> <span>Demographic</span></a
           >
         </li>
@@ -150,6 +155,7 @@
           </div>
         </div>
       </div>
+      <div class="dom_title_report">Report for SNOWEE</div>
 
       <div class="dom_total viewPerformance">
         <div class="dom_total_item">
@@ -162,9 +168,7 @@
           </div>
           <div class="dom_cpr_reach">
             <p id="dom_reach_unit"></p>
-            <p
-              onclick="alert('Only calculated on Brand Awareness campaigns.')"
-            >
+            <p onclick="alert('Only calculated on Brand Awareness campaigns.')">
               <span>Unit cost</span> <i class="fa-solid fa-circle-info"></i>
             </p>
           </div>
@@ -202,9 +206,7 @@
           </div>
           <div class="dom_cpr_reach">
             <p id="dom_mess_unit"></p>
-            <p
-              onclick="alert('Only calculated on Messenger campaigns.')"
-            >
+            <p onclick="alert('Only calculated on Messenger campaigns.')">
               <span>Unit cost</span> <i class="fa-solid fa-circle-info"></i>
             </p>
           </div>
@@ -222,9 +224,7 @@
           </div>
           <div class="dom_cpr_reach">
             <p id="dom_like_unit"></p>
-            <p
-              onclick="alert('Only calculated on Like/Follows campaigns.')"
-            >
+            <p onclick="alert('Only calculated on Like/Follows campaigns.')">
               <span>Unit cost</span> <i class="fa-solid fa-circle-info"></i>
             </p>
           </div>
@@ -407,7 +407,7 @@
           </div>
         </div>
       </div>
-      <div class="dom_chart_total viewPerformance w50">
+      <div class="dom_chart_total w50 viewDemographic">
         <div class="dom_chart_item list" id="dom_age_chart">
           <div class="daily_title_wrap">
             <h2 class="daily_title">Reach by age</h2>
@@ -432,7 +432,7 @@
           <canvas id="regionChart"></canvas>
         </div>
       </div>
-      <div class="dom_chart_total viewPerformance circle">
+      <div class="dom_chart_total circle viewDemographic">
         <div class="dom_chart_item circle">
           <h2>Reach on Flatform</h2>
           <canvas id="reachChart"></canvas>
@@ -441,7 +441,7 @@
           <h2>Reach on Gender</h2>
           <canvas id="genderChart"></canvas>
         </div>
-        <div class="dom_chart_item only">
+        <div class="dom_chart_item only impression_chart">
           <h2>Impression on Device</h2>
           <canvas id="impressionDoughnutChart"></canvas>
         </div>
