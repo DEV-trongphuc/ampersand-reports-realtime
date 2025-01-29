@@ -83,23 +83,48 @@
         <div class="dom_header_date">
           <i class="fa-solid fa-calendar-days"></i>
           <div class="dom_choose_day">
-            <span class="dom_choosed">Last 7 days</span>
+            <span class="dom_choosed">This Month</span>
             <i class="fa-solid fa-angle-down"></i>
             <ul>
-              <li data-date="today">Today</li>
-              <li data-date="yesterday">Yesterday</li>
-              <li data-date="last%5f3d">Last 3 days</li>
-              <li data-date="last%5f7d">Last 7 days</li>
-              <li data-date="last%5f30d">Last 30 days</li>
-              <li data-date="this%5fweek%5fmon%5ftoday">This Week</li>
-              <li data-date="last%5fweek%5fmon%5fsun">Last Week</li>
-              <li data-date="this%5fmonth">This Month</li>
-              <li data-date="last%5fmonth">Last Month</li>
-              <li data-date="this%5fquarter">This Quarter</li>
-              <li data-date="last%5fquarter">Last Quarter</li>
-              <li data-date="maximum">Data Maximum</li>
+              <li data-date="today">
+                <span class="radio_box"></span> <span>Today</span>
+              </li>
+              <li data-date="yesterday">
+                <span class="radio_box"></span> <span>Yesterday</span>
+              </li>
+              <li data-date="last%5f3d">
+                <span class="radio_box"></span> <span>Last 3 days</span>
+              </li>
+              <li data-date="last%5f7d">
+                <span class="radio_box"></span> <span>Last 7 days</span>
+              </li>
+              <li data-date="last%5f30d">
+                <span class="radio_box"></span> <span>Last 30 days</span>
+              </li>
+              <li data-date="this%5fweek%5fmon%5ftoday">
+                <span class="radio_box"></span> <span>This Week</span>
+              </li>
+              <li data-date="last%5fweek%5fmon%5fsun">
+                <span class="radio_box"></span> <span>Last Week</span>
+              </li>
+              <li data-date="this%5fmonth">
+                <span class="radio_box"></span> <span>This Month</span>
+              </li>
+              <li data-date="last%5fmonth">
+                <span class="radio_box"></span> <span>Last Month</span>
+              </li>
+              <li data-date="this%5fquarter">
+                <span class="radio_box"></span> <span>This Quarter</span>
+              </li>
+              <li data-date="last%5fquarter">
+                <span class="radio_box"></span> <span>Last Quarter</span>
+              </li>
+              <li data-date="maximum">
+                <span class="radio_box"></span> <span>Data Maximum</span>
+              </li>
               <li class="li_custom_date">
-                Custom date
+                <span class="radio_box"></span>
+                <span>Custom date</span>
                 <div class="custom_date">
                   <p><span>Start</span> <input type="date" id="start" /></p>
                   <p><span>End</span> <input type="date" id="end" /></p>
@@ -175,16 +200,31 @@
         </div>
         <h2>Report for SNOWEE</h2>
         <span>-</span>
-        <div class="dom_title_report_list">
+        <div class="dom_title_report_list campaign">
           <div>
-            <span class="dom_view_campaign">Data for all campaign</span>
+            <span class="dom_view_campaign">Data for all campaigns</span>
             <i class="fa-solid fa-sort-down"></i>
             <ul>
-              <li>Haagen Dazs - Message</li>
-              <li>Haagen Dazs - Message</li>
-              <li>Haagen Dazs - Message</li>
-              <li>Haagen Dazs - Message</li>
+              <li><span class="radio_box"></span> Haagen Dazs - Message</li>
+              <li><span class="radio_box"></span> Haagen Dazs - Message</li>
+              <li><span class="radio_box"></span> Haagen Dazs - Message</li>
+              <li><span class="radio_box"></span> Haagen Dazs - Message</li>
             </ul>
+          </div>
+        </div>
+        <div class="view_adset">
+          <span>-</span>
+          <div class="dom_title_report_list adset">
+            <div>
+              <span class="dom_view_campaign adset">Data for all adset</span>
+              <i class="fa-solid fa-sort-down"></i>
+              <ul class="active">
+                <li><span class="radio_box"></span> Haagen Dazs - Message</li>
+                <li><span class="radio_box"></span> Haagen Dazs - Message</li>
+                <li><span class="radio_box"></span> Haagen Dazs - Message</li>
+                <li><span class="radio_box"></span> Haagen Dazs - Message</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -331,13 +371,27 @@
               <i class="fa-solid fa-angle-down"></i>
             </p>
             <ul>
-              <li data-view="Reach">Reach</li>
-              <li data-view="Messaging Conversations">Messaging</li>
-              <li data-view="Post Reactions">Post Reactions</li>
-              <li data-view="Post Engagement">Post Engagement</li>
-              <li data-view="Page Likes">Page Likes</li>
-              <li data-view="Spend">Spend</li>
-              <li data-view="Link Click">Link Click</li>
+              <li data-view="Reach">
+                <span class="radio_box"></span><span>Reach</span>
+              </li>
+              <li data-view="Messaging Conversations">
+                <span class="radio_box"></span><span>Messaging</span>
+              </li>
+              <li data-view="Post Reactions">
+                <span class="radio_box"></span><span>Post Reactions</span>
+              </li>
+              <li data-view="Post Engagement">
+                <span class="radio_box"></span><span>Post Engagement</span>
+              </li>
+              <li data-view="Page Likes">
+                <span class="radio_box"></span><span>Page Likes</span>
+              </li>
+              <li data-view="Spend">
+                <span class="radio_box"></span><span>Spend</span>
+              </li>
+              <li data-view="Link Click">
+                <span class="radio_box"></span><span>Link Click</span>
+              </li>
             </ul>
           </div>
 
