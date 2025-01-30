@@ -156,8 +156,8 @@
       </div>
       <div class="dom_choose_campaign"></div>
 
-      <div class="dom_total">
-        <div class="dom_total_item">
+      <div class="dom_total first_block">
+        <div class="dom_total_item spend">
           <div>
             <div>
               <p class="dom_total_title">Total Account Spend</p>
@@ -259,7 +259,7 @@
           <div class="dom_cpr_reach">
             <p id="dom_reaction_unit"></p>
             <p
-              onclick="alert('Only calculated on Engagement & objectives Reaction campaigns.')"
+              onclick="alert('Only calculated on Engagement & objectives Reaction: Like, Love, Haha, Wow, Sad,...')"
             >
               <span>Unit cost</span> <i class="fa-solid fa-circle-info"></i>
             </p>
@@ -346,6 +346,52 @@
           </div>
         </div>
       </div>
+      <div class="dom_chart_total dailyChart_Account">
+        <div class="dom_chart_item circle" id="dom_daily_chart">
+          <div class="daily_title_wrap">
+            <h2 class="daily_title2">Daily Account Cost Spend</h2>
+
+            <i
+              class="fa-regular fa-floppy-disk download_btn"
+              data-name="Daily line chart"
+              data-id="dom_daily_chart"
+            ></i>
+          </div>
+          <div class="dom_select_view account">
+            <p>
+              <span class="view_selected account">View Spend</span>
+              <i class="fa-solid fa-angle-down"></i>
+            </p>
+            <ul>
+              <li data-view="Reach">
+                <span class="radio_box"></span><span>Reach</span>
+              </li>
+              <li data-view="Messaging Conversations">
+                <span class="radio_box"></span><span>Messaging</span>
+              </li>
+              <li data-view="Leads">
+                <span class="radio_box"></span><span>Leads</span>
+              </li>
+              <li data-view="Post Reactions">
+                <span class="radio_box"></span><span>Post Reactions</span>
+              </li>
+              <li data-view="Post Engagement">
+                <span class="radio_box"></span><span>Post Engagement</span>
+              </li>
+              <li data-view="Page Likes">
+                <span class="radio_box"></span><span>Page Likes</span>
+              </li>
+              <li data-view="Spend">
+                <span class="radio_box"></span><span>Spend</span>
+              </li>
+              <li data-view="Link Click">
+                <span class="radio_box"></span><span>Link Click</span>
+              </li>
+            </ul>
+          </div>
+          <canvas id="dailyChart_Account"></canvas>
+        </div>
+      </div>
       <div class="dom_chart_total viewPerformance dailyChart percentChart">
         <div class="dom_chart_item only">
           <h2>% Spend for Campaign types</h2>
@@ -365,9 +411,9 @@
               data-id="dom_daily_chart"
             ></i>
           </div>
-          <div class="dom_select_view">
+          <div class="dom_select_view campaign">
             <p>
-              <span class="view_selected">View Spend</span>
+              <span class="view_selected account campaign">View Spend</span>
               <i class="fa-solid fa-angle-down"></i>
             </p>
             <ul>
@@ -376,6 +422,9 @@
               </li>
               <li data-view="Messaging Conversations">
                 <span class="radio_box"></span><span>Messaging</span>
+              </li>
+              <li data-view="Leads">
+                <span class="radio_box"></span><span>Leads</span>
               </li>
               <li data-view="Post Reactions">
                 <span class="radio_box"></span><span>Post Reactions</span>
@@ -398,6 +447,7 @@
           <canvas id="dailyChart"></canvas>
         </div>
       </div>
+
       <div class="dom_chart_total">
         <div class="dom_chart_item" id="dom_allocation_chart">
           <div class="daily_title_wrap">
