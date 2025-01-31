@@ -140,6 +140,12 @@
           <img src="./DOM-img/ampersand.jpg" />
           <ul>
             <li>
+              <a href="javascript:;" id="dom_role">
+                <i class="fa-solid fa-feather"></i>
+                <span>DOM Role</span>
+              </a>
+            </li>
+            <li>
               <a href="https://www.facebook.com/turni0" target="_blank">
                 <i class="fa-solid fa-headset"></i>
                 <span>Contact IT</span>
@@ -346,74 +352,53 @@
           </div>
         </div>
       </div>
-      <div class="dom_chart_total dailyChart_Account">
-        <div class="dom_chart_item circle" id="dom_daily_chart">
-          <div class="daily_title_wrap">
-            <h2 class="daily_title2">Daily Account Cost Spend</h2>
 
-            <i
-              class="fa-regular fa-floppy-disk download_btn"
-              data-name="Daily line chart"
-              data-id="dom_daily_chart"
-            ></i>
-          </div>
-          <div class="dom_select_view account">
-            <p>
-              <span class="view_selected account">View Spend</span>
-              <i class="fa-solid fa-angle-down"></i>
-            </p>
-            <ul>
-              <li data-view="Reach">
-                <span class="radio_box"></span><span>Reach</span>
-              </li>
-              <li data-view="Messaging Conversations">
-                <span class="radio_box"></span><span>Messaging</span>
-              </li>
-              <li data-view="Leads">
-                <span class="radio_box"></span><span>Leads</span>
-              </li>
-              <li data-view="Post Reactions">
-                <span class="radio_box"></span><span>Post Reactions</span>
-              </li>
-              <li data-view="Post Engagement">
-                <span class="radio_box"></span><span>Post Engagement</span>
-              </li>
-              <li data-view="Page Likes">
-                <span class="radio_box"></span><span>Page Likes</span>
-              </li>
-              <li data-view="Spend">
-                <span class="radio_box"></span><span>Spend</span>
-              </li>
-              <li data-view="Link Click">
-                <span class="radio_box"></span><span>Link Click</span>
-              </li>
-            </ul>
-          </div>
-          <canvas id="dailyChart_Account"></canvas>
-        </div>
-      </div>
-      <div class="dom_chart_total viewPerformance dailyChart percentChart">
-        <div class="dom_chart_item only">
+      <div class="dom_chart_total viewPerformance percentChart">
+        <div class="dom_chart_item">
           <h2>% Spend for Campaign types</h2>
-          <div class="progress-bar"></div>
-          <p class="segment_legend"></p>
+          <canvas id="progressBarChart"></canvas>
+          <!-- <div class="progress-bar"></div>
+          <p class="segment_legend"></p> -->
+        </div>
+        <div class="dom_chart_item frequency">
+          <h2>Frequency</h2>
+
+          <div
+            class="semi-donut margin"
+            style="--percentage: 80; --fill: #ffa900"
+          >
+            <p class="frequency_number"></p>
+          </div>
+          <div class="frequency_number_label">
+            <p>0</p>
+            <p>3</p>
+          </div>
+          <div class="dom_frequency_label">
+            <p>
+              <b>Impression</b>
+              <span class="dom_frequency_label_impression">000</span>
+            </p>
+            <p>
+              <b>Reach</b> <span class="dom_frequency_label_reach">000</span>
+            </p>
+          </div>
         </div>
       </div>
 
       <div class="dom_chart_total viewPerformance dailyChart">
-        <div class="dom_chart_item circle" id="dom_daily_chart">
+        <div class="dom_chart_item circle" id="dom_daily_chart_acc">
           <div class="daily_title_wrap">
             <h2 class="daily_title"></h2>
 
             <i
               class="fa-regular fa-floppy-disk download_btn"
               data-name="Daily line chart"
-              data-id="dom_daily_chart"
+              data-id="dom_daily_chart_acc"
             ></i>
           </div>
           <div class="dom_select_view campaign">
             <p>
-              <span class="view_selected account campaign">View Spend</span>
+              <span class="view_selected campaign">View Spend</span>
               <i class="fa-solid fa-angle-down"></i>
             </p>
             <ul>
@@ -474,7 +459,52 @@
           </div>
         </div>
       </div>
+      <div class="dom_chart_total dailyChart_Account">
+        <div class="dom_chart_item circle" id="dom_daily_chart">
+          <div class="daily_title_wrap">
+            <h2 class="daily_title2">Daily Account Cost Spend</h2>
 
+            <i
+              class="fa-regular fa-floppy-disk download_btn"
+              data-name="Daily line chart"
+              data-id="dom_daily_chart"
+            ></i>
+          </div>
+          <div class="dom_select_view account">
+            <p>
+              <span class="view_selected account">View Spend</span>
+              <i class="fa-solid fa-angle-down"></i>
+            </p>
+            <ul>
+              <li data-view="Reach">
+                <span class="radio_box"></span><span>Reach</span>
+              </li>
+              <li data-view="Messaging Conversations">
+                <span class="radio_box"></span><span>Messaging</span>
+              </li>
+              <li data-view="Leads">
+                <span class="radio_box"></span><span>Leads</span>
+              </li>
+              <li data-view="Post Reactions">
+                <span class="radio_box"></span><span>Post Reactions</span>
+              </li>
+              <li data-view="Post Engagement">
+                <span class="radio_box"></span><span>Post Engagement</span>
+              </li>
+              <li data-view="Page Likes">
+                <span class="radio_box"></span><span>Page Likes</span>
+              </li>
+              <li data-view="Spend">
+                <span class="radio_box"></span><span>Spend</span>
+              </li>
+              <li data-view="Link Click">
+                <span class="radio_box"></span><span>Link Click</span>
+              </li>
+            </ul>
+          </div>
+          <canvas id="dailyChart_Account"></canvas>
+        </div>
+      </div>
       <div class="dom_table_data">
         <div class="dom_detail_head">
           <h2>Detail Adset Data</h2>
@@ -591,6 +621,43 @@
         <img src="./DOM-img/meta.png" />
         <h3>No data campaign in current option</h3>
       </div>
+      <div class="dom_role_container">
+        <i class="fa-solid fa-xmark"></i>
+        <img src="./DOM-img/DOM_LOGO.png" />
+        <h2>DOM Marketing - Facebook Ads Report</h2>
+        <ul>
+          <li><b>Đặt tên CAMPAIGN bắt đầu hoặc có chứa:</b></li>
+          <li>
+            <b> <i class="fa-solid fa-caret-right"></i> Awareness:</b> cho các
+            chiến dịch tiếp cận - Reach/Impression.
+          </li>
+          <li>
+            <b> <i class="fa-solid fa-caret-right"></i> Engagement:</b> cho các
+            chiến dịch tăng tương tác - Comment, Share, Reaction (Like, Love,
+            Haha,...).
+          </li>
+          <li>
+            <b> <i class="fa-solid fa-caret-right"></i> Message:</b> cho các
+            chiến dịch tối ưu hóa lượt trò chuyện qua tín nhắn.
+          </li>
+          <li>
+            <b> <i class="fa-solid fa-caret-right"></i> Lead:</b> cho các chiến
+            dịch tối ưu hóa lượt gửi form.
+          </li>
+          <li>
+            <b> <i class="fa-solid fa-caret-right"></i> Traffic:</b> cho các
+            chiến dịch tối ưu hóa lượt click vào website
+          </li>
+          <li>
+            <b
+              >Đặt tên ADSET và CAMPAGIN không chứa các ký tự đặt biệt (và dấu &
+              hay #)</b
+            >
+          </li>
+          <li></li>
+        </ul>
+      </div>
+      <div class="dom_role_container_overlay"></div>
     </div>
 
     <script src="./dom.js"></script>
