@@ -75,91 +75,92 @@
         <i class="fa-regular fa-square-caret-right"></i>
       </div>
     </div>
-    <div class="dom_header">
-      <div class="dom_bar">
-        <i class="fa-solid fa-bars"></i>
-      </div>
-      <div class="dom_header_date">
-        <i class="fa-solid fa-calendar-days"></i>
-        <div class="dom_choose_day">
-          <span class="dom_choosed">This Month</span>
-          <i class="fa-solid fa-angle-down"></i>
+
+    <div id="dom_contentarea" class="">
+      <div class="dom_header">
+        <div class="dom_bar">
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <div class="dom_header_date">
+          <i class="fa-solid fa-calendar-days"></i>
+          <div class="dom_choose_day">
+            <span class="dom_choosed">This Month</span>
+            <i class="fa-solid fa-angle-down"></i>
+            <ul>
+              <li data-date="today">
+                <span class="radio_box"></span> <span>Today</span>
+              </li>
+              <li data-date="yesterday">
+                <span class="radio_box"></span> <span>Yesterday</span>
+              </li>
+              <li data-date="last%5f3d">
+                <span class="radio_box"></span> <span>Last 3 days</span>
+              </li>
+              <li data-date="last%5f7d">
+                <span class="radio_box"></span> <span>Last 7 days</span>
+              </li>
+              <li data-date="last%5f30d">
+                <span class="radio_box"></span> <span>Last 30 days</span>
+              </li>
+              <li data-date="this%5fweek%5fmon%5ftoday">
+                <span class="radio_box"></span> <span>This Week</span>
+              </li>
+              <li data-date="last%5fweek%5fmon%5fsun">
+                <span class="radio_box"></span> <span>Last Week</span>
+              </li>
+              <li data-date="this%5fmonth">
+                <span class="radio_box"></span> <span>This Month</span>
+              </li>
+              <li data-date="last%5fmonth">
+                <span class="radio_box"></span> <span>Last Month</span>
+              </li>
+              <li data-date="this%5fquarter">
+                <span class="radio_box"></span> <span>This Quarter</span>
+              </li>
+              <li data-date="last%5fquarter">
+                <span class="radio_box"></span> <span>Last Quarter</span>
+              </li>
+              <li data-date="maximum">
+                <span class="radio_box"></span> <span>Data Maximum</span>
+              </li>
+              <li class="li_custom_date">
+                <span class="radio_box"></span>
+                <span>Custom date</span>
+                <div class="custom_date">
+                  <p><span>Start</span> <input type="date" id="start" /></p>
+                  <p><span>End</span> <input type="date" id="end" /></p>
+                  <a class="apply_custom_date">Apply</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <p class="dom_choosed_day"></p>
+        </div>
+        <div class="dom_user">
+          <p>Ampersand</p>
+          <img src="./DOM-img/ampersand.jpg" />
           <ul>
-            <li data-date="today">
-              <span class="radio_box"></span> <span>Today</span>
+            <!-- <li>
+              <a href="javascript:;" id="dom_role">
+                <i class="fa-solid fa-feather"></i>
+                <span>DOM Role</span>
+              </a>
+            </li> -->
+            <li>
+              <a href="https://www.facebook.com/turni0" target="_blank">
+                <i class="fa-solid fa-headset"></i>
+                <span>Contact IT</span>
+              </a>
             </li>
-            <li data-date="yesterday">
-              <span class="radio_box"></span> <span>Yesterday</span>
-            </li>
-            <li data-date="last%5f3d">
-              <span class="radio_box"></span> <span>Last 3 days</span>
-            </li>
-            <li data-date="last%5f7d">
-              <span class="radio_box"></span> <span>Last 7 days</span>
-            </li>
-            <li data-date="last%5f30d">
-              <span class="radio_box"></span> <span>Last 30 days</span>
-            </li>
-            <li data-date="this%5fweek%5fmon%5ftoday">
-              <span class="radio_box"></span> <span>This Week</span>
-            </li>
-            <li data-date="last%5fweek%5fmon%5fsun">
-              <span class="radio_box"></span> <span>Last Week</span>
-            </li>
-            <li data-date="this%5fmonth">
-              <span class="radio_box"></span> <span>This Month</span>
-            </li>
-            <li data-date="last%5fmonth">
-              <span class="radio_box"></span> <span>Last Month</span>
-            </li>
-            <li data-date="this%5fquarter">
-              <span class="radio_box"></span> <span>This Quarter</span>
-            </li>
-            <li data-date="last%5fquarter">
-              <span class="radio_box"></span> <span>Last Quarter</span>
-            </li>
-            <li data-date="maximum">
-              <span class="radio_box"></span> <span>Data Maximum</span>
-            </li>
-            <li class="li_custom_date">
-              <span class="radio_box"></span>
-              <span>Custom date</span>
-              <div class="custom_date">
-                <p><span>Start</span> <input type="date" id="start" /></p>
-                <p><span>End</span> <input type="date" id="end" /></p>
-                <a class="apply_custom_date">Apply</a>
-              </div>
+            <li id="fixapp">
+              <a>
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+                <span>Fix App</span>
+              </a>
             </li>
           </ul>
         </div>
-        <p class="dom_choosed_day"></p>
       </div>
-      <div class="dom_user">
-        <p>Ampersand</p>
-        <img src="./DOM-img/ampersand.jpg" />
-        <ul>
-          <!-- <li>
-            <a href="javascript:;" id="dom_role">
-              <i class="fa-solid fa-feather"></i>
-              <span>DOM Role</span>
-            </a>
-          </li> -->
-          <li>
-            <a href="https://www.facebook.com/turni0" target="_blank">
-              <i class="fa-solid fa-headset"></i>
-              <span>Contact IT</span>
-            </a>
-          </li>
-          <li id="fixapp">
-            <a>
-              <i class="fa-solid fa-screwdriver-wrench"></i>
-              <span>Fix App</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div id="dom_contentarea" class="">
       <div class="dom_choose_campaign"></div>
 
       <div class="dom_total first_block">
@@ -233,7 +234,7 @@
             </div>
           </div>
         </div>
-        <p class="dom_quick_close"><i class="fa-solid fa-circle-xmark"></i></p>
+        <p class="dom_quick_close"><i class="fa-solid fa-xmark"></i></p>
       </div>
 
       <div class="dom_total viewPerformance">
@@ -358,8 +359,6 @@
         <div class="dom_chart_item">
           <h2>Spend for Optimization Goal</h2>
           <canvas id="progressBarChart"></canvas>
-          <!-- <div class="progress-bar"></div>
-          <p class="segment_legend"></p> -->
         </div>
         <div class="dom_chart_item frequency">
           <h2>Frequency</h2>
@@ -526,7 +525,7 @@
                   <th>Select</th>
                   <th>Campaign Name</th>
                   <th>Adset Name</th>
-                  <th>Insight</th>
+                  <th>Insights</th>
                   <th>Cost Spend</th>
                   <th>Reach</th>
                   <th>Impression</th>
@@ -697,6 +696,7 @@
       </div>
       <div class="dom_role_container_overlay"></div>
     </div>
+    <div class="dom_quickadset_overlay"></div>
 
     <script src="./dom.js"></script>
   </body>
