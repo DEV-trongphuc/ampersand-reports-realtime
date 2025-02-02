@@ -356,9 +356,30 @@
       </div>
 
       <div class="dom_chart_total viewPerformance percentChart">
-        <div class="dom_chart_item">
-          <h2>Spend for Optimization Goal</h2>
-          <canvas id="progressBarChart"></canvas>
+        <div class="dom_chart_item percentChart_wrapper">
+          <div class="percentChart_inner">
+            <h2>Spend for Optimization Goal</h2>
+            <canvas id="progressBarChart"></canvas>
+          </div>
+        </div>
+        <div class="dom_chart_item dom_view_adset dom_event_ul">
+          <h2>Top Event in Adset</h2>
+          <ul>
+            <li>
+              <p><span>Reaction</span><span>145</span></p>
+              <p><span></span></p>
+            </li>
+          </ul>
+        </div>
+        <div class="dom_chart_item dom_view_adset dom_cpm_wrapper">
+          <div>
+            <h2>Cost per Mile - CPM</h2>
+            <p class="dom_cpm_number" id="total_cpm_viewPerformance">-</p>
+          </div>
+          <div>
+            <h2>Proportion Results/Reach</h2>
+            <p class="dom_cpm_number" id="total_prr_viewPerformance">-</p>
+          </div>
         </div>
         <div class="dom_chart_item frequency">
           <h2>Frequency</h2>
