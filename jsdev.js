@@ -803,6 +803,32 @@ function renderTopCampaigns(allData) {
     ulElement.appendChild(li);
   });
 }
+function renderTopAdset(allData) {
+  // Nhóm các adset theo tên campaign
+  const adsetTop = allData.reduce((totals, adset) => {
+    const adsetName = adset.adset_name || "Unknown Campaign"; // Lấy tên campaign hoặc gán mặc định nếu không có
+    const spend = parseFloat(adset.spend) || 0; // Lấy spend hoặc gán 0 nếu không có
+    // Kiểm tra campaign đã tồn tại trong danh sách chưa
+    totals.push({ name: adsetName, spend });
+    return totals;
+  }, []);
+
+  // Sắp xếp các campaign theo tổng spend giảm dần
+  adsetTop.sort((a, b) => b.spend - a.spend);
+
+  // Render lên giao diện
+  const ulElement = document.querySelector(".dom_chart_most_ul"); // Phần tử danh sách trên UI
+  ulElement.innerHTML = ""; // Xóa nội dung cũ nếu có
+  adsetTop.forEach((campaign) => {
+    const li = document.createElement("li");
+    li.innerHTML = `<p><span>${campaign.name}</span> <span>${formatCurrency(
+      campaign.spend
+    )}</span></p> <p> <span style="width: ${
+      (campaign.spend * 100) / adsetTop[0].spend
+    }%"></span> </p>`;
+    ulElement.appendChild(li);
+  });
+}
 const dom_choose_day = document.querySelector(".dom_choose_day");
 const dom_choosed = document.querySelector(".dom_choosed");
 const dom_choosed_day = document.querySelector(".dom_choosed_day");
@@ -3143,4 +3169,44 @@ document.addEventListener("click", function (event) {
   if (activeElement && !event.target.closest(".dom_choose_day")) {
     activeElement.classList.remove("active");
   }
+});
+
+// function showNotification() {
+//   const notification = new Notification("🚀 Thông báo mới!", {
+//     body: "Bạn có một tin nhắn mới.",
+//     icon: "https://cdn-icons-png.flaticon.com/512/1827/1827379.png",
+//   });
+
+//   // Sự kiện khi người dùng nhấp vào notification
+//   notification.onclick = () => {
+//     window.open("https://yourwebsite.com"); // Mở link khi click
+//   };
+
+//   // Tự động đóng sau 5 giây
+//   setTimeout(() => {
+//     notification.close();
+//   }, 5000);
+// }
+// if (Notification.permission === "granted") {
+//   showNotification();
+// } else if (Notification.permission !== "denied") {
+//   Notification.requestPermission().then((permission) => {
+//     if (permission === "granted") {
+//       showNotification();
+//     }
+//   });
+// }
+
+dom_highest_switch_btn = document.querySelectorAll(
+  ".dom_highest_switch > div p"
+);
+dom_highest_switch_btn.forEach((item, index) => {
+  item.addEventListener("click", () => {
+    setActive(item, ".dom_highest_switch > div p");
+    if (index == 0) {
+      renderTopCampaigns(allData);
+    } else {
+      renderTopAdset(allData);
+    }
+  });
 });
