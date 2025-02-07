@@ -32,7 +32,7 @@ html {
   overflow-x: hidden;
 }
 :root {
-  --mainClr: #0045a6;
+  --mainClr: #ffa900;
   --textClr: #303030;
   --buttonFadeClr: #dcdcdc;
   --fadeClr: #f1f1f1;
@@ -379,6 +379,7 @@ body::-webkit-scrollbar-thumb:hover {
 #save_date:hover {
   opacity: 0.8;
 }
+
 .custom_date {
   display: flex;
   gap: 1rem;
@@ -398,7 +399,7 @@ body::-webkit-scrollbar-thumb:hover {
   position: absolute;
   content: "";
   width: 30vw;
-  height: 100vh;
+  height: 75vh;
   top: -230%;
   left: 0rem;
   z-index: -1;
@@ -565,7 +566,7 @@ body::-webkit-scrollbar-thumb:hover {
 }
 .dom_total_item > div:last-child > p:first-child {
   font-weight: bold;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 .dom_total_item > div:last-child > p:last-child {
   display: flex;
@@ -807,12 +808,16 @@ body::-webkit-scrollbar-thumb:hover {
 }
 #dom_detail_find {
   background-color: var(--mainClr);
-  padding: 1.1rem 4rem;
+  padding: 1.3rem 2rem;
   cursor: pointer;
   color: white;
   font-weight: bold;
   border-radius: 9px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 .dom_detail_table {
   width: 100%;
@@ -1131,7 +1136,7 @@ input[type="checkbox"]:checked::before {
 .dom_detail_table tfoot {
   position: sticky; /* Cố định footer */
   bottom: 0; /* Đảm bảo footer luôn ở dưới cùng */
-  background-color: #e4eaff; /* Đảm bảo nền của footer là trắng */
+  background-color: #ffdd98; /* Đảm bảo nền của footer là trắng */
   border-top: 1px solid #ccc; /* Đặt đường viền trên cho footer */
   z-index: 1; /* Đảm bảo footer nằm trên các hàng dữ liệu */
   color: black;
@@ -1146,10 +1151,10 @@ input[type="checkbox"]:checked::before {
   transition: 0.2s;
 }
 .dom_detail_table tbody tr:hover {
-  background-color: #e5f0ffbf;
+  background-color: #fff4dd;
 }
 .dom_detail_table tbody tr.checked {
-  background-color: #e5f0ffbf;
+  background-color: #fff4dd;
 }
 .dom_detail_table tfoot td {
   text-align: right;
