@@ -14,6 +14,7 @@
     <link rel="icon" href="./DOM-img/favicon (2).png" type="image/png" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
@@ -156,7 +157,7 @@
         <div class="dom_total_item spend">
           <div>
             <div>
-              <p class="dom_total_title">Account Spend</p>
+              <p class="dom_total_title">Account Spent</p>
               <p class="dom_total_number" id="total_spend"></p>
             </div>
             <i class="fa-solid fa-sack-dollar"></i>
@@ -187,6 +188,44 @@
               <p class="dom_total_number" id="total_follows"></p>
             </div>
             <i class="fa-solid fa-thumbs-up"></i>
+          </div>
+        </div>
+      </div>
+      <div class="dom_total first_block">
+        <div class="dom_total_item spend">
+          <div>
+            <div>
+              <p class="dom_total_title">Link Clicks</p>
+              <p class="dom_total_number" id="total_clicks"></p>
+            </div>
+            <i class="fa-solid fa-link"></i>
+          </div>
+        </div>
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Total Impressions</p>
+              <p class="dom_total_number" id="total_impressions"></p>
+            </div>
+            <i class="fa-solid fa-eye"></i>
+          </div>
+        </div>
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Total Message</p>
+              <p class="dom_total_number" id="total_message"></p>
+            </div>
+            <i class="fa-brands fa-facebook-messenger"></i>
+          </div>
+        </div>
+        <div class="dom_total_item">
+          <div>
+            <div>
+              <p class="dom_total_title">Total Leads</p>
+              <p class="dom_total_number" id="total_leads"></p>
+            </div>
+            <i class="fa-solid fa-bullseye"></i>
           </div>
         </div>
       </div>
@@ -408,7 +447,7 @@
           </div>
           <div class="dom_select_view campaign">
             <p>
-              <span class="view_selected campaign">View Spend</span>
+              <span class="view_selected campaign">View Spent</span>
               <i class="fa-solid fa-angle-down"></i>
             </p>
             <ul>
@@ -431,7 +470,7 @@
                 <span class="radio_box"></span><span>Page Likes</span>
               </li>
               <li data-view="Spend">
-                <span class="radio_box"></span><span>Spend</span>
+                <span class="radio_box"></span><span>Spent</span>
               </li>
               <li data-view="Link Click">
                 <span class="radio_box"></span><span>Link Click</span>
@@ -446,7 +485,7 @@
       <div class="dom_chart_total">
         <div class="dom_chart_item" id="dom_allocation_chart">
           <div class="daily_title_wrap">
-            <h2 class="daily_title">Cost spend by Brand</h2>
+            <h2 class="daily_title">Cost spent by Brand</h2>
             <i
               class="fa-regular fa-floppy-disk download_btn"
               data-name="Cost allocation by Brand"
@@ -460,10 +499,10 @@
           <canvas id="platformChart"></canvas>
         </div> -->
         <div class="dom_chart_item list">
-          <h2>Highest campaign spend</h2>
+          <h2>Highest campaign spent</h2>
           <div class="dom_chart_item_highest">
             <p class="dom_chart_most_title">
-              <span>Name</span> <span>Spend</span>
+              <span>Name</span> <span>Spent</span>
             </p>
             <ul class="dom_chart_most_ul"></ul>
           </div>
@@ -472,7 +511,7 @@
       <div class="dom_chart_total dailyChart_Account">
         <div class="dom_chart_item circle" id="dom_daily_chart">
           <div class="daily_title_wrap">
-            <h2 class="daily_title2">Daily Account Cost Spend</h2>
+            <h2 class="daily_title2">Daily Account Cost Spent</h2>
 
             <i
               class="fa-regular fa-floppy-disk download_btn"
@@ -482,7 +521,7 @@
           </div>
           <div class="dom_select_view account">
             <p>
-              <span class="view_selected account">View Spend</span>
+              <span class="view_selected account">View Spent</span>
               <i class="fa-solid fa-angle-down"></i>
             </p>
             <ul>
@@ -505,7 +544,7 @@
                 <span class="radio_box"></span><span>Page Likes</span>
               </li>
               <li data-view="Spend">
-                <span class="radio_box"></span><span>Spend</span>
+                <span class="radio_box"></span><span>Spent</span>
               </li>
               <li data-view="Link Click">
                 <span class="radio_box"></span><span>Link Click</span>
@@ -524,7 +563,7 @@
               placeholder='Filter by "Campaign name"'
               type="text"
             />
-            <p id="dom_detail_find">FIND</p>
+            <p id="dom_detail_find">Export <i class="fa-solid fa-table"></i></p>
           </div>
         </div>
         <div class="dom_table_container">
@@ -532,11 +571,11 @@
             <table class="dom_detail_table" id="dom_table">
               <thead>
                 <tr>
-                  <th>Select</th>
+                  <th><input type="checkbox" id="dom_select_all" /></th>
                   <th>Campaign Name</th>
                   <th>Adset Name</th>
                   <th>Insights</th>
-                  <th>Cost Spend</th>
+                  <th>Cost Spent</th>
                   <th>Reach</th>
                   <th>Impression</th>
                   <th>Result</th>
@@ -582,7 +621,7 @@
       <div class="dom_chart_total viewDemographic fullsize">
         <div class="dom_chart_item list" id="dom_age_chart">
           <div class="daily_title_wrap">
-            <h2 class="daily_title">Hourly Spend & Impression</h2>
+            <h2 class="daily_title">Hourly Spent & Impression</h2>
             <i
               class="fa-regular fa-floppy-disk download_btn"
               data-name="Reach by age chart"
@@ -708,7 +747,7 @@
       <div class="dom_role_container_overlay"></div>
     </div>
     <div class="dom_quickadset_overlay"></div>
-
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="./dom.js"></script>
   </body>
 </html>
