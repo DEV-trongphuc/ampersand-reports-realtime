@@ -411,6 +411,7 @@ function processData(data, performance) {
   let awarenessSpend = 0;
   let awarenessReach = 0;
   let engagementSpend = 0;
+  let raectionSpend = 0;
   let engagementReaction = 0;
   let messageSpend = 0;
   let messageCount = 0;
@@ -455,8 +456,13 @@ function processData(data, performance) {
         if (item.optimization_goal == "PROFILE_VISIT") {
           trafficSpend += parseFloat(item.spend) || 0;
         }
-        if (item.optimization_goal == "POST_ENGAGEMENT") {
+        if (item.optimization_goal == "POST_ENGAGEMENT" || item.optimization_goal == "THRUPLAY" ) {
+          if(item.optimization_goal == "POST_ENGAGEMENT") {
+          raectionSpend += parseFloat(item.spend) || 0;
+          }
+          
           engagementSpend += parseFloat(item.spend) || 0;
+          
           engagementReaction +=
             getValueFromActions(item.actions, "post_reaction") || 0;
         }
@@ -579,7 +585,7 @@ function processData(data, performance) {
 
     dom_reaction_unit.innerText =
       engagementReaction > 0
-        ? formatCurrency((engagementSpend / engagementReaction).toFixed(0))
+        ? formatCurrency((raectionSpend / engagementReaction).toFixed(0))
         : "No goal campaign";
 
     dom_mess_unit.innerText =
