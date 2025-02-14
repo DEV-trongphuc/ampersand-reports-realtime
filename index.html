@@ -20,7 +20,7 @@
       href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/dom.css" />
+    <link rel="stylesheet" href="/dev.css" />
   </head>
   <body>
     <div id="dom_sidebar">
@@ -175,7 +175,7 @@
         <div class="dom_total_item">
           <div>
             <div>
-              <p class="dom_total_title">Total Reaction</p>
+              <p class="dom_total_title">Total Engagement</p>
               <p class="dom_total_number" id="total_reaction"></p>
             </div>
             <i class="fa-solid fa-heart"></i>
@@ -239,12 +239,7 @@
           <div>
             <span class="dom_view_campaign">Data for all campaigns</span>
             <i class="fa-solid fa-sort-down"></i>
-            <ul>
-              <li><span class="radio_box"></span> Haagen Dazs - Message</li>
-              <li><span class="radio_box"></span> Haagen Dazs - Message</li>
-              <li><span class="radio_box"></span> Haagen Dazs - Message</li>
-              <li><span class="radio_box"></span> Haagen Dazs - Message</li>
-            </ul>
+            <ul></ul>
           </div>
         </div>
         <div class="view_adset">
@@ -253,12 +248,7 @@
             <div>
               <span class="dom_view_campaign adset">Data for all adsets</span>
               <i class="fa-solid fa-sort-down"></i>
-              <ul class="active">
-                <li><span class="radio_box"></span> Haagen Dazs - Message</li>
-                <li><span class="radio_box"></span> Haagen Dazs - Message</li>
-                <li><span class="radio_box"></span> Haagen Dazs - Message</li>
-                <li><span class="radio_box"></span> Haagen Dazs - Message</li>
-              </ul>
+              <ul class="active"></ul>
             </div>
           </div>
         </div>
@@ -284,16 +274,16 @@
         <div class="dom_total_item">
           <div>
             <div>
-              <p class="dom_total_title">Total Reaction</p>
+              <p class="dom_total_title">Total Engagement</p>
               <p
                 class="dom_total_number"
-                id="total_reaction_viewPerformance"
+                id="total_engagement_viewPerformance"
               ></p>
             </div>
             <i class="fa-solid fa-heart"></i>
           </div>
           <div class="dom_cpr_reach">
-            <p id="dom_reaction_unit"></p>
+            <p id="dom_engagement_unit"></p>
             <p
               onclick="alert('Only calculated on Engagement & objectives Reaction: Like, Love, Haha, Wow, Sad,...')"
             >
@@ -351,10 +341,10 @@
         <div class="dom_total_item">
           <div>
             <div>
-              <p class="dom_total_title">Total Engagement</p>
+              <p class="dom_total_title">Total Reactions</p>
               <p
                 class="dom_total_number"
-                id="total_engagement_viewPerformance"
+                id="total_reaction_viewPerformance"
               ></p>
             </div>
             <i class="fa-solid fa-photo-film"></i>
@@ -391,7 +381,7 @@
           </div>
         </div>
         <div class="dom_chart_item dom_view_adset dom_event_ul">
-          <h2>Top Event in Adset</h2>
+          <h2>Top Engagements on Ad</h2>
           <ul>
             <li>
               <p><span>Reaction</span><span>145</span></p>
@@ -585,8 +575,8 @@
                   <th>Reach</th>
                   <th>Impression</th>
                   <th>Result</th>
-                  <th>Optimization Goal</th>
                   <th>CPR</th>
+                  <th>Optimization Goal</th>
                   <th>Frequency</th>
                   <th>Follows</th>
                   <th>Reaction</th>
@@ -595,6 +585,8 @@
                   <th>Lead</th>
                   <th>CPM</th>
                   <th>Engagement</th>
+                  <th>Post Share</th>
+                  <th>Post Save</th>
                   <th>Video view</th>
                   <th>Photo view</th>
                   <th>Comments</th>
@@ -754,6 +746,6 @@
     </div>
     <div class="dom_quickadset_overlay"></div>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
-    <script src="./dom.js"></script>
+    <script src="./jsdev.js"></script>
   </body>
 </html>
