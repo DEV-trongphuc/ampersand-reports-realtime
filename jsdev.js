@@ -612,22 +612,22 @@ function processData(data, performance) {
     dom_reach_unit.innerText =
       awarenessReach > 0
         ? formatCurrency((awarenessSpend / awarenessReach).toFixed(1))
-        : "No goal campaign";
+        : "No goal";
 
     dom_reaction_unit.innerText =
       engagementCount > 0
         ? formatCurrency((engagementSpend / engagementCount).toFixed(0))
-        : "No goal campaign";
+        : "No goal";
 
     dom_mess_unit.innerText =
       messageCount > 0
         ? formatCurrency((messageSpend / messageCount).toFixed(0))
-        : "No goal campaign";
+        : "No goal";
 
     dom_like_unit.innerText =
       likepageSpend > 0
         ? formatCurrency((likepageSpend / likepageCount).toFixed(0))
-        : "No goal campaign";
+        : "No goal";
   }
 
   dom_detail_tbody.innerHTML = render;
@@ -2534,11 +2534,15 @@ const dom_bar = document.querySelector(".dom_bar");
 const dom_bar_close = document.querySelector(".dom_bar_close");
 const dom_zoom = document.querySelector(".dom_zoom");
 const dom_sidebar = document.querySelector("#dom_sidebar");
+const dom_side_overlay = document.querySelector("#dom_side_overlay");
 dom_bar.addEventListener("click", () => {
   dom_sidebar.classList.add("active");
 });
 dom_bar_close.addEventListener("click", () => {
   dom_sidebar.classList.toggle("active");
+});
+dom_side_overlay.addEventListener("click", () => {
+  dom_sidebar.classList.remove("active");
 });
 dom_sidebar.addEventListener("click", () => {
   dom_sidebar.classList.remove("active");
