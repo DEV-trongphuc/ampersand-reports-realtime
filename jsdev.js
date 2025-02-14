@@ -40,7 +40,7 @@ let allData = [];
 
 // _____ELEMENT________
 const dom_reach_unit = document.getElementById("dom_reach_unit");
-const dom_reaction_unit = document.getElementById("dom_reaction_unit");
+const dom_reaction_unit = document.getElementById("dom_engagement_unit");
 const dom_mess_unit = document.getElementById("dom_mess_unit");
 const dom_like_unit = document.getElementById("dom_like_unit");
 const percentChart = document.querySelector(".percentChart");
@@ -179,7 +179,7 @@ async function fetchData(api) {
       Math.round(totals.reach)
     );
     document.getElementById("total_reaction").textContent = formatNumber(
-      Math.round(totals.reaction)
+      Math.round(totals.engagement)
     );
     document.getElementById("total_follows").textContent = formatNumber(
       Math.round(totals.follows)
@@ -219,6 +219,8 @@ function updateTotals(rows, selectedCount = 0) {
   let messengerView = 0;
   let video = 0;
   let photo = 0;
+  let postShare = 0;
+  let postSave = 0;
 
   rows.forEach((row) => {
     spend += parseFloat(row.querySelector(".spend").dataset.value) || 0;
@@ -227,6 +229,8 @@ function updateTotals(rows, selectedCount = 0) {
     impressions +=
       parseInt(row.querySelector(".impressions").dataset.value) || 0;
     engagement += parseInt(row.querySelector(".engagement").dataset.value) || 0;
+    postShare += parseInt(row.querySelector(".postshare").dataset.value) || 0;
+    postSave += parseInt(row.querySelector(".postsave").dataset.value) || 0;
     reactions +=
       parseInt(row.querySelector(".postReaction").dataset.value) || 0;
     follows += parseInt(row.querySelector(".follows").dataset.value) || 0;
@@ -249,6 +253,8 @@ function updateTotals(rows, selectedCount = 0) {
     { name: "Video view", value: video },
     { name: "Photo view", value: photo },
     { name: "Post Engagement", value: engagement },
+    { name: "Post Share", value: postShare },
+    { name: "Post Save", value: postSave },
     { name: "Follows/Likepage", value: follows },
     { name: "Link Click", value: linkClicks },
   ];
@@ -307,6 +313,8 @@ function updateTotals(rows, selectedCount = 0) {
         <td>${formatNumber(lead)}</td>
         <td>-</td>
         <td>${formatNumber(engagement)}</td>
+        <td>${formatNumber(postShare)}</td>
+        <td>${formatNumber(postSave)}</td>
         <td>${formatNumber(video)}</td>
         <td>${formatNumber(photo)}</td>
         <td>${formatNumber(comments)}</td>
@@ -385,25 +393,38 @@ function processData(data, performance) {
   // Lắng nghe sự kiện checkbox
   document.addEventListener("change", (e) => {
     if (e.target.type === "checkbox") {
-      const row = e.target.closest("tr");
+      const isSelectAll = e.target.id === "dom_select_all";
+      const checkboxes = document.querySelectorAll(
+        'tbody input[type="checkbox"]'
+      );
 
-      // Thêm hoặc loại bỏ class 'checked'
-      if (e.target.checked) {
-        row.classList.add("checked");
+      if (isSelectAll) {
+        // Nếu checkbox "chọn tất cả" bị thay đổi, cập nhật tất cả checkbox con
+        checkboxes.forEach((checkbox) => {
+          checkbox.checked = e.target.checked;
+          const row = checkbox.closest("tr");
+          row.classList.toggle("checked", e.target.checked);
+        });
       } else {
-        row.classList.remove("checked");
+        // Nếu là checkbox của từng hàng, chỉ cập nhật class của nó
+        const row = e.target.closest("tr");
+        row.classList.toggle("checked", e.target.checked);
       }
 
       // Lấy tất cả các hàng được check
-      const checkedRows = Array.from(document.querySelectorAll("tr.checked"));
+      const checkedRows = document.querySelectorAll("tr.checked");
 
+      // Nếu không có hàng nào được chọn thì tính tổng toàn bộ tbody
       if (checkedRows.length > 0) {
-        updateTotals(checkedRows, checkedRows.length); // Gửi số hàng được chọn
+        updateTotals(checkedRows, checkedRows.length);
       } else {
-        // Nếu không có hàng nào được check, tính tổng toàn bộ
-        const allRows = Array.from(document.querySelectorAll("tbody tr"));
+        const allRows = document.querySelectorAll("tbody tr");
         updateTotals(allRows);
       }
+
+      // Cập nhật trạng thái của checkbox "chọn tất cả"
+      document.getElementById("dom_select_all").checked =
+        checkboxes.length > 0 && checkboxes.length === checkedRows.length;
     }
   });
 
@@ -415,6 +436,7 @@ function processData(data, performance) {
   let engagementReaction = 0;
   let messageSpend = 0;
   let messageCount = 0;
+  let engagementCount = 0;
   let likepageSpend = 0;
   let trafficSpend = 0;
   let likepageCount = 0;
@@ -438,6 +460,9 @@ function processData(data, performance) {
         getValueFromActions(item.actions, "page_engagement") || 0;
       const photoView = getValueFromActions(item.actions, "photo_view") || 0;
       const videoView = getValueFromActions(item.actions, "video_view") || 0;
+      const postShare = getValueFromActions(item.actions, "post") || 0;
+      const postSave =
+        getValueFromActions(item.actions, "onsite_conversion.post_save") || 0;
       const messengerStart =
         getValueFromActions(
           item.actions,
@@ -456,15 +481,15 @@ function processData(data, performance) {
         if (item.optimization_goal == "PROFILE_VISIT") {
           trafficSpend += parseFloat(item.spend) || 0;
         }
-        if (item.optimization_goal == "POST_ENGAGEMENT" || item.optimization_goal == "THRUPLAY" ) {
-          if(item.optimization_goal == "POST_ENGAGEMENT") {
-          raectionSpend += parseFloat(item.spend) || 0;
-          }
-          
+        if (
+          item.optimization_goal == "POST_ENGAGEMENT" ||
+          item.optimization_goal == "THRUPLAY"
+        ) {
           engagementSpend += parseFloat(item.spend) || 0;
-          
           engagementReaction +=
             getValueFromActions(item.actions, "post_reaction") || 0;
+          engagementCount +=
+            getValueFromActions(item.actions, "post_engagement") || 0;
         }
         if (item.optimization_goal == "REPLIES") {
           messageSpend += spend;
@@ -486,7 +511,7 @@ function processData(data, performance) {
       // Xác định resultType dựa trên campaign name
       let resultType = 0;
       if (item.optimization_goal == "POST_ENGAGEMENT")
-        resultType = parseInt(postReaction);
+        resultType = parseInt(postEngagement);
       if (item.optimization_goal == "REACH") resultType = parseInt(reach);
       if (item.optimization_goal == "THRUPLAY")
         resultType = parseInt(videoView);
@@ -536,8 +561,8 @@ function processData(data, performance) {
               <td class="result" data-value="${resultType}">${
         resultType > 0 ? formatNumber(resultType) : "-"
       }</td>
-        <td>${formatLabel(item.optimization_goal)}</td>
-              <td class="costPerResult" data-value="${costPerResult}">${formattedCostPerResult}</td>
+      <td class="costPerResult" data-value="${costPerResult}">${formattedCostPerResult}</td>
+      <td>${formatLabel(item.optimization_goal)}</td>
               <td class="frequency" data-value="${frequency}">${frequency}</td>
     <td class="follows" data-value="${follows}">${formatNumber(follows)}</td>
        <td class="postReaction" data-value="${postReaction}">${formatNumber(
@@ -552,6 +577,12 @@ function processData(data, performance) {
               <td class="lead" data-value="${lead}">${formatNumber(lead)}</td>
               <td class="cpm" data-value="${cpm}">${formattedCpm}</td>
               <td class="engagement" data-value="${postEngagement}">${formatpostEngagement}</td>
+              <td class="postshare" data-value="${postShare}">${formatNumber(
+        postShare
+      )}</td>
+              <td class="postsave" data-value="${postSave}">${formatNumber(
+        postSave
+      )}</td>
               <td class="video" data-value="${videoView}">${formatNumber(
         videoView
       )}</td>
@@ -584,8 +615,8 @@ function processData(data, performance) {
         : "No goal campaign";
 
     dom_reaction_unit.innerText =
-      engagementReaction > 0
-        ? formatCurrency((raectionSpend / engagementReaction).toFixed(0))
+      engagementCount > 0
+        ? formatCurrency((engagementSpend / engagementCount).toFixed(0))
         : "No goal campaign";
 
     dom_mess_unit.innerText =
@@ -618,32 +649,6 @@ function sortTableBySpend() {
   tbody.innerHTML = "";
   rows.forEach((row) => tbody.appendChild(row));
 }
-document
-  .getElementById("dom_select_all")
-  .addEventListener("click", function () {
-    const checkboxes = document.querySelectorAll(
-      'tbody input[type="checkbox"]'
-    );
-    const isChecked = this.checked; // Trạng thái của nút "chọn tất cả"
-
-    checkboxes.forEach((checkbox) => {
-      checkbox.checked = isChecked;
-      const row = checkbox.closest("tr");
-
-      if (isChecked) {
-        row.classList.add("checked");
-      } else {
-        row.classList.remove("checked");
-      }
-    });
-
-    // Cập nhật tổng khi chọn tất cả hoặc bỏ chọn
-    const checkedRows = isChecked
-      ? Array.from(document.querySelectorAll("tr.checked"))
-      : Array.from(document.querySelectorAll("tbody tr"));
-
-    updateTotals(checkedRows, isChecked ? checkedRows.length : undefined);
-  });
 
 // Gọi hàm sắp xếp sau khi render
 function debounce(func, delay) {
@@ -744,6 +749,7 @@ function calculateTotals(allData) {
     click: 0,
     message: 0,
     impressions: 0,
+    engagement: 0,
   };
 
   // Lặp qua tất cả các adset
@@ -755,6 +761,9 @@ function calculateTotals(allData) {
     totals.impressions += parseInt(adset.impressions || 0);
     totals.reaction += parseInt(
       getValueFromActions(adset.actions, "post_reaction") || 0
+    );
+    totals.engagement += parseInt(
+      getValueFromActions(adset.actions, "post_engagement") || 0
     );
     totals.follows += parseInt(getValueFromActions(adset.actions, "like") || 0);
     totals.message += parseInt(
@@ -1086,9 +1095,12 @@ function handleMenuClick(item, index) {
 
   if (index !== 0) {
     localStorage.setItem("iview", index);
-    const quickID = localStorage.getItem("quickID") || "0";
+    const quickID = localStorage.getItem("quickID");
     const query = localStorage.getItem("query");
     setActive(filterItems[quickID * 1], ".dom_quick_filter a.active");
+    if (!quickID) {
+      filterItems[0].click();
+    }
     if (viewCampaigns && viewCampaigns !== "Data for all campaigns") {
       filterData(viewCampaigns, viewAdsets);
     } else {
